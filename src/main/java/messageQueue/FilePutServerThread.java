@@ -48,7 +48,7 @@ public class FilePutServerThread extends Thread {
                     fileMessageQueueServer = new FileMessageQueueServer(infos[0],0);
                     MainTest.fileMessageQueueServerMap.put(infos[0],fileMessageQueueServer);
                 }
-                //将消息放入消息队列实例
+                //将消息放入消息队列实例 todo 会导致指标偏移
                 fileMessageQueueServer.putMessage(infos[1]);
                 if ("exit".equals(info)) {
                     log.info("正在关闭消息队列！");

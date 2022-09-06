@@ -49,6 +49,7 @@ public class FileGetServerThread extends Thread {
                     }
                 }
 
+                //todo 需要catch错误  不然会导致报错终止线程！！！！！
                 fileMessageQueueServer.getReadUtil(Integer.parseInt(jsoMap.get(key)));
                 FileMessageQueueServer finalFileMessageQueueServer = fileMessageQueueServer;
                 new Thread(() -> {
